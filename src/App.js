@@ -42,19 +42,20 @@ function App() {
             </Grid.Column>
           </Grid>
 
-          <Divider />
+          <Divider hidden/>
 
           <Button.Group fluid>
-            <Button basic target="_blank" href='mailto:usfslk@icloud.com' color='blue'>
+            <Button color='black' target="_blank" href='mailto:usfslk@icloud.com'>
               <Icon name='mail' /> Contact
             </Button>
-            <Button target="_blank" href='https://calendly.com/youssefselkani'>
-              <Icon name='clock' /> Schedule Meeting
-            </Button>
-            <Button color='yellow' target="_blank" href='/' basic>
+            <Button color='black' target="_blank" href='https://docs.google.com/document/d/1P5pDcOx3YoVFZDGicqBF12mMt60rY3rX9Ko6_4uYmHA/edit?usp=sharing'>
               <Icon name='download' /> Resume
             </Button>
           </Button.Group>
+          <Divider hidden/>
+            <Button fluid inverted target="_blank" href='https://calendly.com/youssefselkani'>
+              <Icon name='clock' /> Schedule Meeting
+            </Button>
         </Segment>
 
         <Grid columns={4} inverted padded divided fluid stackable verticalAlign='middle'>
