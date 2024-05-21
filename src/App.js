@@ -1,25 +1,33 @@
 import './App.css';
 import 'semantic-ui-css/semantic.min.css'
-import { Button, Container, Divider, Grid, Icon, Image, Segment, Label } from 'semantic-ui-react'
+import { Button, Container, Divider, Grid, Icon, Menu, Segment, Image, Header, List } from 'semantic-ui-react'
 
 
 function App() {
   return (
     <div style={{ display: 'flex', alignItems: 'center', minHeight: '100vh', backgroundColor: '#000', color: '#fff', paddingTop: 28 }}>
 
+      <br />
       <Container inverted>
+        <Menu inverted pointing secondary>
+          <Menu.Item active>
+            Youssef Selkani
+          </Menu.Item>
+
+          <Menu.Menu position='right'>
+            <Menu.Item target="_blank" href='mailto:usfslk@icloud.com'>
+              Contact
+            </Menu.Item>
+          </Menu.Menu>
+        </Menu>
         <Segment inverted basic fluid padded='very'>
           <center>
-            <h1>Youssef Selkani</h1>
-            <h3>Full-Stack Developer</h3>
+            <h3>Freelance Software Developer</h3>
           </center>
-          <Divider hidden/>
+          <Divider hidden />
 
           <Grid fluid stackable verticalAlign='middle'>
-            {/* <Grid.Column width={6}>
-              <Image bordered centered src={require('./assets/hero.jpg')} size='large' style={{ borderRadius: 14 }} />
-            </Grid.Column> */}
-            <Grid.Column width={16}>
+            <Grid.Column width={6}>
               <p>
                 Highly skilled professional with a strong background in designing modern user interfaces and managing end-to-end projects.
                 With 7 years of experience in remote working environments, I am adept at producing clean and flawless code that meets the highest standards of quality.
@@ -35,27 +43,17 @@ function App() {
                 With a passion for problem-solving and a creative approach to finding innovative solutions,
                 I am committed to developing high-quality software products that exceed expectations.
               </p>
-              <p>
-                In summary, I bring a wealth of experience in UI design, project management, and web/mobile app development.
-                With my dedication I am confident in my ability to contribute to the success of any team.
-              </p>
+            </Grid.Column>
+            <Grid.Column width={10} textAlign='center'>
+              <Image circular centered src={require('./assets/hero.jpg')} size='small' />
+              <Divider hidden />
+              <Button inverted target="_blank" href='https://calendly.com/youssefselkani'>
+                <Icon name='clock' /> Schedule Meeting
+              </Button>
+
             </Grid.Column>
           </Grid>
 
-          <Divider hidden/>
-
-          <Button.Group fluid>
-            <Button color='black' target="_blank" href='mailto:usfslk@icloud.com'>
-              <Icon name='mail' /> Contact
-            </Button>
-            <Button color='black' target="_blank" href='https://docs.google.com/document/d/1P5pDcOx3YoVFZDGicqBF12mMt60rY3rX9Ko6_4uYmHA/edit?usp=sharing'>
-              <Icon name='download' /> Resume
-            </Button>
-          </Button.Group>
-          <Divider hidden/>
-            <Button fluid inverted target="_blank" href='https://calendly.com/youssefselkani'>
-              <Icon name='clock' /> Schedule Meeting
-            </Button>
         </Segment>
 
         <Grid columns={4} inverted padded divided fluid stackable verticalAlign='middle'>
@@ -78,6 +76,47 @@ function App() {
             <Button fluid target="_blank" href='https://www.twitter.net/youssefselkani' inverted basic>
               <Icon name='twitter' /> Twitter
             </Button>
+          </Grid.Column>
+        </Grid>
+
+        <h2>Skills</h2>
+
+        <Grid columns={3}>
+          <Grid.Column>
+            <Segment inverted padded='very' placeholder>
+              <h3>Strategic <br/>Planning</h3>
+              <p>Formulating strategies to achieve organizational goals.</p>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column>
+            <Segment inverted padded='very' placeholder>
+              <h3>Database <br/>Design</h3>
+              <p>Designing efficient and scalable modern database systems.</p>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column>
+            <Segment inverted padded='very' placeholder>
+              <h3>Creative <br/>Problem Solving</h3>
+              <p>Generating solutions to challenging problems.</p>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column>
+            <Segment inverted padded='very' placeholder>
+              <h3>Analytical <br/>Thinking</h3>
+              <p>Applying logical and rational reasoning to solve complex issues.</p>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column>
+            <Segment inverted padded='very' placeholder>
+              <h3>Information <br/>Architecture</h3>
+              <p>Structuring information for optimal accessibility & usability.</p>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column>
+            <Segment inverted padded='very' placeholder>
+              <h3>Data <br/>Analysis</h3>
+              <p>Interpreting complex data to inform decision-making.</p>
+            </Segment>
           </Grid.Column>
         </Grid>
 
@@ -230,18 +269,7 @@ function App() {
           <Button href='https://coursera.org/verify/UQPAL75F4D6C' basic inverted target="_blank">View</Button>
         </Segment>
 
-        <h2>Skills</h2>
-        <Label size='large' style={{ marginTop: 7 }}>Adaptability</Label>
-        <Label size='large' style={{ marginTop: 7 }}>Mathematics</Label>
-        <Label size='large' style={{ marginTop: 7 }}>Database Design</Label>
-        <Label size='large' style={{ marginTop: 7 }}>Creative Problem Solving</Label>
-        <Label size='large' style={{ marginTop: 7 }}>Analytical Thinking Skills</Label>
-        <Label size='large' style={{ marginTop: 7 }}>Information Architecture</Label>
 
-        <h2>Hobbies</h2>
-        <Label size='large' style={{ marginTop: 7 }}>Music composition</Label>
-        <Label size='large' style={{ marginTop: 7 }}>Wild camping</Label>
-        <Label size='large' style={{ marginTop: 7 }}>Day trading</Label>
 
         <h2>Languages</h2>
 
@@ -275,7 +303,35 @@ function App() {
           </Grid>
         </Segment>
 
-        <p style={{ color: 'white', textAlign: 'center', marginTop: 28, marginBottom: 7 }}>© 2014-2024 Youssef Selkani - All Rights Reserved.</p>
+        <Segment inverted vertical verticalAlign='middle' style={{ padding: '5em 0em', backgroundColor: 'transparent' }}>
+          <Container>
+            <Grid divided inverted stackable>
+              <Grid.Row>
+                <Grid.Column width={3}>
+                  <Header inverted as='h4' content='About' />
+                  <List link inverted>
+                    <List.Item as='a'>Sitemap</List.Item>
+                    <List.Item as='a'>Contact</List.Item>
+                  </List>
+                </Grid.Column>
+                <Grid.Column width={3}>
+                  <Header inverted as='h4' content='Legal' />
+                  <List link inverted>
+                    <List.Item as='a'>Privacy Policy</List.Item>
+                    <List.Item as='a'>Terms of Services</List.Item>
+                  </List>
+                </Grid.Column>
+                <Grid.Column width={7} textAlign='center'>
+                  <Button color='black' target="_blank" href='https://docs.google.com/document/d/1P5pDcOx3YoVFZDGicqBF12mMt60rY3rX9Ko6_4uYmHA/edit?usp=sharing'>
+                    <Icon name='download' /> Download Resume
+                  </Button>
+                  <p style={{ color: 'white', marginTop: 28, marginBottom: 7 }}>© 2014-2024 Youssef Selkani - All Rights Reserved.</p>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </Container>
+        </Segment>
+
       </Container>
     </div>
 
