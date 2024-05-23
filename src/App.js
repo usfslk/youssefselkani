@@ -5,11 +5,17 @@ import { Button, Container, Divider, Grid, Icon, Menu, Segment, Image, Header, L
 
 function App() {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', minHeight: '100vh', backgroundColor: '#000', color: '#fff', paddingTop: 28 }}>
+    <div style={{
+      display: 'flex', alignItems: 'center', minHeight: '100vh',
+      // backgroundColor: '#163172', 
+      background: 'linear-gradient(326deg, rgba(30,3,66,1) 0%, rgba(14,70,163,1) 62%)',
+
+      color: '#F6F6F6', paddingTop: 28
+    }}>
 
       <br />
       <Container inverted>
-        <Menu inverted pointing secondary>
+        <Menu inverted pointing secondary style={{ borderColor: 'transparent' }}>
           <Menu.Item active>
             Youssef Selkani
           </Menu.Item>
@@ -20,109 +26,118 @@ function App() {
             </Menu.Item>
           </Menu.Menu>
         </Menu>
-        <Segment inverted basic fluid padded='very'>
-          <center>
-            <h3>Freelance Software Developer</h3>
-          </center>
-          <Divider hidden />
 
-          <Grid fluid stackable verticalAlign='middle'>
-            <Grid.Column width={6}>
-              <p>
-                Highly skilled professional with a strong background in designing modern user interfaces and managing end-to-end projects.
-                With 7 years of experience in remote working environments, I am adept at producing clean and flawless code that meets the highest standards of quality.
-              </p>
-              <p>
-                One of my key strengths lies in my ability to build and consume various types of APIs enabling me to seamlessly
-                integrate external services and enhance the functionality of applications.
-                Additionally, I have a solid grasp of design tools, which allows me to create visually appealing and user-friendly interfaces.
-              </p>
-              <p>
-                Throughout my career, I have demonstrated adaptability, attention to detail, and analytical thinking skills.
-                I thrive in challenging environments and consistently deliver exceptional results.
-                With a passion for problem-solving and a creative approach to finding innovative solutions,
-                I am committed to developing high-quality software products that exceed expectations.
-              </p>
-            </Grid.Column>
-            <Grid.Column width={10} textAlign='center'>
-              <Image circular centered src={require('./assets/hero.jpg')} size='small' />
-              <Divider hidden />
-              <Button inverted target="_blank" href='https://calendly.com/youssefselkani'>
-                <Icon name='clock' /> Schedule Meeting
-              </Button>
 
-            </Grid.Column>
-          </Grid>
+
+        {/* <div style={{ margin: 100 }} /> */}
+
+
+        <Segment inverted fluid style={{ color: '#F6F6F6', minHeight: '90vh', backgroundColor: 'transparent', display: 'flex', alignItems: 'center' }}>
+          <div>
+            <h3 style={{ textAlign: 'center' }}>Freelance Software Developer | Creating Custom Solutions for SMEs ✨</h3>
+            <Divider hidden />
+            <Grid fluid stackable verticalAlign='middle'>
+              <Grid.Column width={8} textAlign='center'>
+                <Image circular centered src={require('./assets/hero.jpg')} size='small' />
+                <Divider hidden />
+                <Button color='black' target="_blank" href='https://calendly.com/youssefselkani'>
+                  <Icon name='clock' /> Schedule Meeting
+                </Button>
+              </Grid.Column>
+              <Grid.Column width={8}>
+                <p>
+                  Highly skilled professional with a strong background in designing modern user interfaces and managing end-to-end projects.
+                  With 7 years of experience in remote working environments, I am adept at producing clean and flawless code that meets the highest standards of quality.
+                </p>
+                <p>
+                  One of my key strengths lies in my ability to build and consume various types of APIs enabling me to seamlessly
+                  integrate external services and enhance the functionality of applications.
+                  Additionally, I have a solid grasp of design tools, which allows me to create visually appealing and user-friendly interfaces.
+                </p>
+                <p>
+                  Throughout my career, I have demonstrated adaptability, attention to detail, and analytical thinking skills.
+                  I thrive in challenging environments and consistently deliver exceptional results.
+                  With a passion for problem-solving and a creative approach to finding innovative solutions,
+                  I am committed to developing high-quality software products that exceed expectations.
+                </p>
+              </Grid.Column>
+            </Grid>
+
+            <Divider hidden />
+
+            <Grid columns={4} inverted padded fluid stackable verticalAlign='middle'>
+              <Grid.Column>
+                <Button fluid target="_blank" href='https://www.linkedin.com/in/youssefselkani/' inverted basic>
+                  <Icon name='linkedin' /> LinkedIn
+                </Button>
+              </Grid.Column>
+              <Grid.Column>
+                <Button fluid target="_blank" href='https://github.com/usfslk' inverted basic>
+                  <Icon name='github' /> GitHub
+                </Button>
+              </Grid.Column>
+              <Grid.Column>
+                <Button fluid target="_blank" href='https://play.google.com/store/apps/dev?id=5139489492316756034' inverted basic>
+                  <Icon name='google play' /> Google Play
+                </Button>
+              </Grid.Column>
+              <Grid.Column>
+                <Button fluid target="_blank" href='https://www.twitter.net/youssefselkani' inverted basic>
+                  <Icon name='twitter' /> Twitter
+                </Button>
+              </Grid.Column>
+            </Grid>
+          </div>
 
         </Segment>
 
-        <Grid columns={4} inverted padded divided fluid stackable verticalAlign='middle'>
-          <Grid.Column>
-            <Button fluid target="_blank" href='https://www.linkedin.com/in/youssefselkani/' inverted basic>
-              <Icon name='linkedin' /> LinkedIn
-            </Button>
-          </Grid.Column>
-          <Grid.Column>
-            <Button fluid target="_blank" href='https://github.com/usfslk' inverted basic>
-              <Icon name='github' /> GitHub
-            </Button>
-          </Grid.Column>
-          <Grid.Column>
-            <Button fluid target="_blank" href='https://play.google.com/store/apps/dev?id=5139489492316756034' inverted basic>
-              <Icon name='google play' /> Google Play
-            </Button>
-          </Grid.Column>
-          <Grid.Column>
-            <Button fluid target="_blank" href='https://www.twitter.net/youssefselkani' inverted basic>
-              <Icon name='twitter' /> Twitter
-            </Button>
-          </Grid.Column>
-        </Grid>
 
         <h2>Skills</h2>
+        <Divider hidden />
 
-        <Grid columns={3}>
+        <Grid columns={3} stackable>
           <Grid.Column>
-            <Segment inverted padded='very' placeholder>
-              <h3>Strategic <br/>Planning</h3>
+            <Segment inverted padded='very' >
+              <h3>Strategic <br />Planning</h3>
               <p>Formulating strategies to achieve organizational goals.</p>
             </Segment>
           </Grid.Column>
           <Grid.Column>
-            <Segment inverted padded='very' placeholder>
-              <h3>Database <br/>Design</h3>
+            <Segment inverted padded='very' >
+              <h3>Database <br />Design</h3>
               <p>Designing efficient and scalable modern database systems.</p>
             </Segment>
           </Grid.Column>
           <Grid.Column>
-            <Segment inverted padded='very' placeholder>
-              <h3>Creative <br/>Problem Solving</h3>
+            <Segment inverted padded='very' >
+              <h3>Creative <br />Problem Solving</h3>
               <p>Generating solutions to challenging problems.</p>
             </Segment>
           </Grid.Column>
           <Grid.Column>
-            <Segment inverted padded='very' placeholder>
-              <h3>Analytical <br/>Thinking</h3>
+            <Segment inverted padded='very' >
+              <h3>Analytical <br />Thinking</h3>
               <p>Applying logical and rational reasoning to solve complex issues.</p>
             </Segment>
           </Grid.Column>
           <Grid.Column>
-            <Segment inverted padded='very' placeholder>
-              <h3>Information <br/>Architecture</h3>
+            <Segment inverted padded='very' >
+              <h3>Information <br />Architecture</h3>
               <p>Structuring information for optimal accessibility & usability.</p>
             </Segment>
           </Grid.Column>
           <Grid.Column>
-            <Segment inverted padded='very' placeholder>
-              <h3>Data <br/>Analysis</h3>
+            <Segment inverted padded='very' >
+              <h3>Data <br />Analysis</h3>
               <p>Interpreting complex data to inform decision-making.</p>
             </Segment>
           </Grid.Column>
         </Grid>
 
         <h2>Employment History</h2>
+        <Divider hidden />
 
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <h4>Web Developer at Trajectory US</h4>
           <em>Oct, 2023 - Nov, 2023</em>
           <Divider />
@@ -133,7 +148,7 @@ function App() {
           <Button href='https://trajectory.us.com/' basic inverted target="_blank">View</Button>
         </Segment>
 
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <h4>Mobile App Developer at C.F. Print</h4>
           <em>Feb, 2021 - May, 2022</em>
           <Divider />
@@ -144,7 +159,7 @@ function App() {
           <Button href='https://play.google.com/store/apps/details?id=com.usfslk.cfprint' basic inverted target="_blank">View</Button>
         </Segment>
 
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <h4>Mobile App Developer at Rthath One</h4>
           <em>Jan, 2021 - May, 2021</em>
           <Divider />
@@ -155,7 +170,7 @@ function App() {
           <Button href='https://play.google.com/store/apps/details?id=com.rthathone' basic inverted target="_blank">View</Button>
         </Segment>
 
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <h4>Mobile App Developer at Netflix</h4>
           <em>Apr, 2020 - Aug, 2020</em>
           <Divider />
@@ -167,7 +182,7 @@ function App() {
           <Button href='https://imgur.com/a/9mCawqU' basic inverted target="_blank">View</Button>
         </Segment>
 
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <h4>Product Designer at GlobalBarter</h4>
           <em>May, 2020 - Jun, 2020</em>
           <Divider />
@@ -177,7 +192,7 @@ function App() {
           <Button href='https://invis.io/XJNJQ946SMR ' basic inverted target="_blank">View</Button>
         </Segment>
 
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <h4>Full-Stack Developer at Earthmo</h4>
           <em>Mar, 2020 - Apr, 2020</em>
           <Divider />
@@ -186,7 +201,7 @@ function App() {
           <Button href='https://earthmo-d47b3.firebaseapp.com/' basic inverted target="_blank">View</Button>
         </Segment>
 
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <h4>Full-Stack Developer at Murkstom</h4>
           <em>Jul, 2019 - Mar, 2020</em>
           <Divider />
@@ -196,7 +211,7 @@ function App() {
           <Button href='https://webview-ea6af.web.app/' basic inverted target="_blank">View</Button>
         </Segment>
 
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <h4>Mobile App Developer at Museum of the American Arts & Crafts Movement</h4>
           <em>Jan, 2019 - Apr, 2019</em>
           <Divider />
@@ -206,7 +221,7 @@ function App() {
           <Button disabled basic inverted target="_blank">Confidential</Button>
         </Segment>
 
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <h4>Front-End Developer at CVS Health</h4>
           <em>May, 2019 - Jun, 2019</em>
           <Divider />
@@ -216,7 +231,7 @@ function App() {
           <Button href='https://cvsbanner.firebaseapp.com' basic inverted target="_blank">View</Button>
         </Segment>
 
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <h4>UX Designer at liSt</h4>
           <em>May, 2017 - Aug, 2017</em>
           <Divider />
@@ -226,7 +241,7 @@ function App() {
           <Button href='https://marvelapp.com/5h9j6b3/screen/37966689' basic inverted target="_blank">View</Button>
         </Segment>
 
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <h4>UX Designer at BidClipz</h4>
           <em>Feb, 2016 - Apr, 2016</em>
           <Divider />
@@ -237,8 +252,9 @@ function App() {
         </Segment>
 
         <h2>Education</h2>
+        <Divider hidden />
 
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <h4>Data Science Specialization at Johns Hopkins University</h4>
           <em>Jan, 2022 - Jul, 2022</em>
           <Divider />
@@ -248,7 +264,7 @@ function App() {
           <Button href='https://coursera.org/share/ca90a0c5642a0b6a026b7a2331873643' basic inverted target="_blank">View</Button>
         </Segment>
 
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <h4>Data Analytics Certificate at Google</h4>
           <em>Jul, 2022 - Aug, 2022</em>
           <Divider />
@@ -258,7 +274,7 @@ function App() {
           <Button href='https://www.credly.com/badges/8a794dbb-1bd9-46e0-8ac6-f7b32d170ddb/public_url' basic inverted target="_blank">View</Button>
         </Segment>
 
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <h4>Introduction to APIs in Google Cloud at Google</h4>
           <em>Jul, 2022 - Sep, 2022</em>
           <Divider />
@@ -269,11 +285,10 @@ function App() {
           <Button href='https://coursera.org/verify/UQPAL75F4D6C' basic inverted target="_blank">View</Button>
         </Segment>
 
-
-
         <h2>Languages</h2>
+        <Divider hidden />
 
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <Grid stackable columns={2} verticalAlign='middle'>
             <Grid.Column>
               <h3>English</h3>
@@ -287,9 +302,7 @@ function App() {
           </Grid>
         </Segment>
 
-        <Divider />
-
-        <Segment fluid inverted>
+        <Segment padded='very' fluid inverted>
           <Grid stackable columns={2} verticalAlign='middle'>
             <Grid.Column>
               <h3>French</h3>
