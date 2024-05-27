@@ -2,6 +2,38 @@ import './App.css';
 import 'semantic-ui-css/semantic.min.css'
 import { Button, Container, Divider, Grid, Icon, Menu, Segment, Image, Header, List } from 'semantic-ui-react'
 
+const Portfolio = ({
+  position,
+  company,
+  duration,
+  tasks,
+  buttonUrl,
+  buttonText,
+  imageUrl,
+}) => {
+  return (
+    <Segment padded='very' fluid inverted>
+      <Grid verticalAlign='middle' stackable>
+        <Grid.Column width={8}>
+          <h4>{position} at {company}</h4>
+          <em>{duration}</em>
+          <Divider />
+          {tasks.map((task, index) => (
+            <li key={index}>{task}</li>
+          ))}
+          <Divider hidden />
+          <Button href={buttonUrl} basic inverted target="_blank">
+            {buttonText}
+          </Button>
+        </Grid.Column>
+        <Grid.Column width={8}>
+          <Image src={imageUrl} fluid />
+        </Grid.Column>
+      </Grid>
+    </Segment>
+  );
+};
+
 
 function App() {
   return (
@@ -26,11 +58,6 @@ function App() {
             </Menu.Item>
           </Menu.Menu>
         </Menu>
-
-
-
-        {/* <div style={{ margin: 100 }} /> */}
-
 
         <Segment inverted fluid style={{ color: '#F6F6F6', minHeight: '90vh', backgroundColor: 'transparent', display: 'flex', alignItems: 'center' }}>
           <div>
@@ -137,119 +164,142 @@ function App() {
         <h2>Employment History</h2>
         <Divider hidden />
 
-        <Segment padded='very' fluid inverted>
-          <h4>Web Developer at Trajectory US</h4>
-          <em>Oct, 2023 - Nov, 2023</em>
-          <Divider />
-          <li>Implemented the UI with a focus on a seamless user experience using Svelte</li>
-          <li>Translated design concepts into functional code, utilizing PrimateJS</li>
-          <li>Deployed the fully developed marketing site, ensuring its accessibility</li>
-          <Divider hidden />
-          <Button href='https://trajectory.us.com/' basic inverted target="_blank">View</Button>
-        </Segment>
+        <Portfolio
+          position="Web Developer"
+          company="Trajectory US"
+          duration="Oct, 2023 - Nov, 2023"
+          tasks={[
+            'Implemented the UI with a focus on a seamless user experience using Svelte',
+            'Translated design concepts into functional code, utilizing PrimateJS',
+            'Deployed the fully developed marketing site, ensuring its accessibility',
+          ]}
+          buttonUrl="https://trajectory.us.com/"
+          buttonText="View"
+          imageUrl={require('./assets/gallery/portfolio-1.jpg')}
+        />
 
-        <Segment padded='very' fluid inverted>
-          <h4>Mobile App Developer at C.F. Print</h4>
-          <em>Feb, 2021 - May, 2022</em>
-          <Divider />
-          <li>Developed a mobile app using React Native, Node, and Firebase that allows users to print tickets using Bluetooth printers</li>
-          <li>Integrated web hook triggers to retrieve custom data from various third-party services</li>
-          <li>Deployed the app on both Google Play and Apple Store</li>
-          <Divider hidden />
-          <Button href='https://play.google.com/store/apps/details?id=com.usfslk.cfprint' basic inverted target="_blank">View</Button>
-        </Segment>
+        <Portfolio
+          position="Mobile App Developer"
+          company="C.F. Print"
+          duration="Feb, 2021 - May, 2022"
+          tasks={[
+            'Developed a mobile app using React Native, Node, and Firebase that allows users to print tickets using Bluetooth printers',
+            'Integrated web hook to retrieve custom data from various third-party services',
+            'Deployed the app on both Google Play and Apple Store',
+          ]}
+          buttonUrl="https://play.google.com/store/apps/details?id=com.usfslk.cfprint"
+          buttonText="View"
+          imageUrl={require('./assets/gallery/portfolio-2.jpg')}
+        />
 
-        <Segment padded='very' fluid inverted>
-          <h4>Mobile App Developer at Rthath One</h4>
-          <em>Jan, 2021 - May, 2021</em>
-          <Divider />
-          <li>Built an e-commerce app from scratch using React Native, WordPress, and WooCommerce API</li>
-          <li>Developed a Node server for authentication, data handling, and orders/payment processing</li>
-          <li>Successfully deployed the app on Google Play</li>
-          <Divider hidden />
-          <Button href='https://play.google.com/store/apps/details?id=com.rthathone' basic inverted target="_blank">View</Button>
-        </Segment>
+        <Portfolio
+          position="Mobile App Developer"
+          company="Rthath One"
+          duration="Jan, 2021 - May, 2021"
+          tasks={[
+            'Built an e-commerce app from scratch using React Native, WordPress, and WooCommerce API',
+            'Developed a Node server for authentication, data handling, and orders/payment processing',
+            'Successfully deployed the app on Google Play',
+          ]}
+          buttonUrl="https://play.google.com/store/apps/details?id=com.rthathone"
+          buttonText="View"
+          imageUrl={require('./assets/gallery/portfolio-3.jpg')}
+        />
 
-        <Segment padded='very' fluid inverted>
-          <h4>Mobile App Developer at Netflix</h4>
-          <em>Apr, 2020 - Aug, 2020</em>
-          <Divider />
-          <li>Created a studio tour companion app for a media company using React Native and Python</li>
-          <li>Integrated APIs to search and load individual studio profiles from survey databases</li>
-          <li>Implemented features allowing users to verify, annotate, update sections of the profile, and add photos and voice notes</li>
-          <li>Due to NDA restrictions, code samples are not available, but you can view simulator screenshots below</li>
-          <Divider hidden />
-          <Button href='https://imgur.com/a/9mCawqU' basic inverted target="_blank">View</Button>
-        </Segment>
+        <Portfolio
+          position="Mobile App Developer"
+          company="Netflix"
+          duration="Apr, 2020 - Aug, 2020"
+          tasks={[
+            'Created a studio tour companion app for a media company using React Native and Python',
+            'Integrated APIs to search and load individual studio profiles from survey databases',
+            'Implemented features allowing users to verify, annotate, update sections of the profile, and add photos and voice notes',
+            'Due to NDA restrictions, code samples are not available, but you can view simulator screenshots below',
+          ]}
+          buttonUrl="https://imgur.com/a/9mCawqU"
+          buttonText="View"
+          imageUrl={require('./assets/gallery/portfolio-4.jpg')}
+        />
 
-        <Segment padded='very' fluid inverted>
-          <h4>Product Designer at GlobalBarter</h4>
-          <em>May, 2020 - Jun, 2020</em>
-          <Divider />
-          <li>Designed a new e-commerce platform focusing on reducing waste and carbon footprint</li>
-          <li>Collaborated on the entire design process, including research, UX/UI design, and user testing</li>
-          <Divider hidden />
-          <Button href='https://invis.io/XJNJQ946SMR ' basic inverted target="_blank">View</Button>
-        </Segment>
+        <Portfolio
+          position="Full-Stack Developer"
+          company="Murkstom"
+          duration="Jul, 2019 - Mar, 2020"
+          tasks={[
+            'Contributed to the development of a code-free platform for building native mobile applications using React, React Native, and Node',
+            'Implemented features for user management, subscriptions, and payment gateway setup',
+          ]}
+          buttonUrl="https://webview-ea6af.web.app/"
+          buttonText="View"
+          imageUrl={require('./assets/gallery/portfolio-7.jpg')}
+        />
 
-        <Segment padded='very' fluid inverted>
-          <h4>Full-Stack Developer at Earthmo</h4>
-          <em>Mar, 2020 - Apr, 2020</em>
-          <Divider />
-          <li>Developed a business directory web app with zip code search functionality using React, Node, and Firebase</li>
-          <Divider hidden />
-          <Button href='https://earthmo-d47b3.firebaseapp.com/' basic inverted target="_blank">View</Button>
-        </Segment>
+        <Portfolio
+          position="Mobile App Developer"
+          company="Museum of the American Arts & Crafts Movement"
+          duration="Jan, 2019 - Apr, 2019"
+          tasks={[
+            'Developed a production mobile app for a new art museum in Florida using React Native and SQL',
+            'Responsible for UI design and API data structure',
+          ]}
+          buttonUrl="#"
+          buttonText="Confidential"
+          imageUrl={require('./assets/gallery/portfolio-8.jpg')}
+        />
 
-        <Segment padded='very' fluid inverted>
-          <h4>Full-Stack Developer at Murkstom</h4>
-          <em>Jul, 2019 - Mar, 2020</em>
-          <Divider />
-          <li>Contributed to the development of a code-free platform for building native mobile applications using React, React Native, and Node</li>
-          <li>Implemented features for user management, subscriptions, and payment gateway setup</li>
-          <Divider hidden />
-          <Button href='https://webview-ea6af.web.app/' basic inverted target="_blank">View</Button>
-        </Segment>
 
-        <Segment padded='very' fluid inverted>
-          <h4>Mobile App Developer at Museum of the American Arts & Crafts Movement</h4>
-          <em>Jan, 2019 - Apr, 2019</em>
-          <Divider />
-          <li>Developed a production mobile app for a new art museum in Florida using React Native and SQL</li>
-          <li>Responsible for UI design and API data structure</li>
-          <Divider hidden />
-          <Button disabled basic inverted target="_blank">Confidential</Button>
-        </Segment>
+        <Portfolio
+          position="Product Designer"
+          company="GlobalBarter"
+          duration="May, 2020 - Jun, 2020"
+          tasks={[
+            'Designed a new e-commerce platform focusing on reducing waste and carbon footprint',
+            'Collaborated on the entire design process, including research, UX/UI design, and user testing',
+          ]}
+          buttonUrl="https://invis.io/XJNJQ946SMR"
+          buttonText="View"
+          imageUrl={require('./assets/gallery/portfolio-5.jpg')}
+        />
 
-        <Segment padded='very' fluid inverted>
-          <h4>Front-End Developer at CVS Health</h4>
-          <em>May, 2019 - Jun, 2019</em>
-          <Divider />
-          <li>Created custom animations using Vanilla JavaScript for CVS Health marketing materials</li>
-          <li>Developed a countdown timer and custom transitions for billboard usage</li>
-          <Divider hidden />
-          <Button href='https://cvsbanner.firebaseapp.com' basic inverted target="_blank">View</Button>
-        </Segment>
+        <Portfolio
+          position="Front-End Developer"
+          company="CVS Health"
+          duration="May, 2019 - Jun, 2019"
+          tasks={[
+            'Created custom animations using Vanilla JavaScript for CVS Health marketing materials',
+            'Developed a countdown timer and custom transitions for billboard usage',
+          ]}
+          buttonUrl="https://cvsbanner.firebaseapp.com"
+          buttonText="View"
+          imageUrl={require('./assets/gallery/portfolio-9.jpg')}
+        />
 
-        <Segment padded='very' fluid inverted>
-          <h4>UX Designer at liSt</h4>
-          <em>May, 2017 - Aug, 2017</em>
-          <Divider />
-          <li>Designed an e-commerce mobile app for the food and drink market, revolutionizing grocery shopping</li>
-          <li>Involved in the entire design process, including research, UX/UI design, and user testing</li>
-          <Divider hidden />
-          <Button href='https://marvelapp.com/5h9j6b3/screen/37966689' basic inverted target="_blank">View</Button>
-        </Segment>
+        <Portfolio
+          position="UX Designer"
+          company="liSt"
+          duration="May, 2017 - Aug, 2017"
+          tasks={[
+            'Designed an e-commerce mobile app for the food and drink market, revolutionizing grocery shopping',
+            'Involved in the entire design process, including research, UX/UI design, and user testing',
+          ]}
+          buttonUrl="https://marvelapp.com/5h9j6b3/screen/37966689"
+          buttonText="View"
+          imageUrl={require('./assets/gallery/portfolio-10.jpg')}
+        />
 
-        <Segment padded='very' fluid inverted>
-          <h4>UX Designer at BidClipz</h4>
-          <em>Feb, 2016 - Apr, 2016</em>
-          <Divider />
-          <li>Designed a video sharing application, enabling users to buy, sell, and broadcast various types of video content</li>
-          <li>Utilized Sketch for the design process</li>
-          <Divider hidden />
-          <Button href='https://invis.io/2ANJQCDD76B' basic inverted target="_blank">View</Button>
-        </Segment>
+        <Portfolio
+          position="UX Designer"
+          company="BidClipz"
+          duration="Feb, 2016 - Apr, 2016"
+          tasks={[
+            'Designed a video sharing application, enabling users to buy, sell, and broadcast various types of video content',
+            'Utilized Sketch for the design process',
+          ]}
+          buttonUrl="https://invis.io/2ANJQCDD76B"
+          buttonText="View"
+          imageUrl={require('./assets/gallery/portfolio-11.jpg')}
+        />
+
 
         <h2>Education</h2>
         <Divider hidden />
@@ -272,17 +322,6 @@ function App() {
           <li>Completed coursework focused on data visualization, data cleaning, data analysis, and data-driven decision making.</li>
           <Divider hidden />
           <Button href='https://www.credly.com/badges/8a794dbb-1bd9-46e0-8ac6-f7b32d170ddb/public_url' basic inverted target="_blank">View</Button>
-        </Segment>
-
-        <Segment padded='very' fluid inverted>
-          <h4>Introduction to APIs in Google Cloud at Google</h4>
-          <em>Jul, 2022 - Sep, 2022</em>
-          <Divider />
-          <li>Successfully completed an introductory course on APIs in Google Cloud, gaining practical knowledge and hands-on experience in building and integrating APIs.</li>
-          <li>Explored key concepts such as API design, authentication, authorization, and API management.</li>
-          <li>Developed proficiency in working with Google Cloud Platform's API services.</li>
-          <Divider hidden />
-          <Button href='https://coursera.org/verify/UQPAL75F4D6C' basic inverted target="_blank">View</Button>
         </Segment>
 
         <h2>Languages</h2>
