@@ -1,7 +1,13 @@
+import React, { useState } from 'react';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css'
-import { Button, Container, Divider, Grid, Icon, Menu, Segment, Image, Header, List } from 'semantic-ui-react'
+import {
+  Button, Container, Divider, Grid, Icon, Menu, Segment, Image, Header, List, Message, Form, Input,
+  TextArea,
+} from 'semantic-ui-react'
 import backgroundImage from './assets/bg.jpeg';
+import emailjs from 'emailjs-com';
+import './styles.css';
 
 const Portfolio = ({
   position,
@@ -36,7 +42,32 @@ const Portfolio = ({
 };
 
 
-function App() {
+
+
+const App = () => {
+  const [status, setStatus] = useState({ success: false, error: false });
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = {
+      name: form.name.value,
+      about: form.about.value,
+      email: form.email.value,
+    };
+
+    emailjs.send('service_ll46zcn', 'template_pbcruuj', formData, 'WLtM2dil32dQpG-S-')
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        setStatus({ success: true, error: false });
+        form.reset();
+      })
+      .catch((err) => {
+        console.error('FAILED...', err);
+        setStatus({ success: false, error: true });
+      });
+  };
+
   return (
     <div>
 
@@ -49,7 +80,7 @@ function App() {
 
             <Menu.Menu position='right'>
               <Menu.Item target="_blank" href='mailto:usfslk@icloud.com'>
-                <Button inverted>Contact</Button>
+                <Button inverted>Get Consultation</Button>
               </Menu.Item>
             </Menu.Menu>
           </Menu>
@@ -65,7 +96,7 @@ function App() {
                   <Image circular centered src={require('./assets/hero.jpg')} size='small' />
                   <Divider hidden />
                   <Button color='black' target="_blank" href='https://calendly.com/youssefselkani'>
-                    <Icon name='clock' /> Schedule Meeting
+                    <Icon name='clock' /> Arrange a Call
                   </Button>
                 </Grid.Column>
                 <Grid.Column width={8}>
@@ -164,7 +195,53 @@ function App() {
             </Grid.Column>
           </Grid>
 
-          <h2 style={{ textAlign: 'center' }}>Employment History</h2>
+          <Divider hidden />
+
+          <Segment padded='very' inverted>
+            <h1>Let's discuss your project!</h1>
+            <p>Share the details of your project – like scope or business challenges. I'll carefully study them and then figure out the next move together.</p>
+            {status.success && <Message positive>Your message has been sent successfully!</Message>}
+            {status.error && <Message negative>There was an error sending your message. Please try again.</Message>}
+            <Divider />
+            <Form onSubmit={sendEmail}>
+              <Input
+                transparent
+                fluid
+                type="text"
+                placeholder='Full Name'
+                name="name"
+                required
+              />
+              <Divider hidden />
+
+              <Input
+                transparent
+                fluid
+                type="email"
+                placeholder='Email'
+                name="email"
+                required
+              />
+              <Divider hidden />
+
+              <TextArea
+                style={{ backgroundColor: "transparent", padding: 0, minHeight: 80 }}
+                fluid
+                type="text"
+                placeholder='About your project'
+                name="about"
+                required
+              />
+              <Divider hidden />
+
+              <Button
+                type="submit"
+                content='Submit'
+              />
+            </Form>
+          </Segment>
+
+          <h2 style={{ textAlign: 'center' }}>Portfolio</h2>
           <Divider hidden />
 
           <Portfolio
@@ -236,6 +313,13 @@ function App() {
             buttonText="View"
             imageUrl={require('./assets/gallery/portfolio-7.jpg')}
           />
+
+          <Segment style={{textAlign:'center'}} inverted padded>
+            <h3>Schedule a Meeting to Discuss Your Goals</h3>
+            <Button inverted  target="_blank" href='https://calendly.com/youssefselkani'>
+              <Icon name='phone' /> Book a Call Now
+            </Button>
+          </Segment>
 
           <Portfolio
             position="Mobile App Developer"
@@ -358,6 +442,50 @@ function App() {
             </Grid>
           </Segment>
 
+          <Segment padded='very' inverted>
+            <h1>Let’s build great software!</h1>
+            <p>I'll contact you within a couple of hours to schedule a meeting to discuss your goals</p>
+            {status.success && <Message positive>Your message has been sent successfully!</Message>}
+            {status.error && <Message negative>There was an error sending your message. Please try again.</Message>}
+            <Divider />
+            <Form onSubmit={sendEmail}>
+              <Input
+                transparent
+                fluid
+                type="text"
+                placeholder='Full Name'
+                name="name"
+                required
+              />
+              <Divider hidden />
+
+              <Input
+                transparent
+                fluid
+                type="email"
+                placeholder='Email'
+                name="email"
+                required
+              />
+              <Divider hidden />
+
+              <TextArea
+                style={{ backgroundColor: "transparent", padding: 0, minHeight: 80 }}
+                fluid
+                type="text"
+                placeholder='About your project'
+                name="about"
+                required
+              />
+              <Divider hidden />
+
+              <Button
+                type="submit"
+                content='Submit'
+              />
+            </Form>
+          </Segment>
+
           <Segment inverted vertical verticalAlign='middle' style={{ padding: '5em 0em', backgroundColor: 'transparent' }}>
             <Container>
               <Grid divided inverted stackable>
@@ -390,8 +518,7 @@ function App() {
         </Container>
       </div>
     </div>
-
   );
-}
+};
 
 export default App;
