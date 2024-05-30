@@ -17,6 +17,7 @@ import Home from "./routes/Home";
 import About from "./routes/About";
 import Contact from "./routes/Contact";
 import Portfolio from "./routes/Portfolio";
+import Success from "./routes/Success";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/success" element={<Success />} />
           </Routes>
 
         <Segment inverted vertical verticalAlign='middle' style={{ padding: '5em 0em' }}>

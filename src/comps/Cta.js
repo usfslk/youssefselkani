@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+
 import { Segment, Message, Divider, Form, Input, TextArea, Button } from 'semantic-ui-react';
 import emailjs from 'emailjs-com';
 
 const Cta = () => {
     const [status, setStatus] = useState({ success: false, error: false });
     const [loading, setLoading] = useState(false); // Add loading state
+    const navigate = useNavigate();
 
     const sendEmail = async (e) => {
         e.preventDefault();
@@ -22,6 +25,9 @@ const Cta = () => {
             console.log('SUCCESS!', response.status, response.text);
             setStatus({ success: true, error: false });
             form.reset();
+            navigate("/success");
+
+
         } catch (err) {
             console.error('FAILED...', err);
             setStatus({ success: false, error: true });
@@ -29,6 +35,8 @@ const Cta = () => {
             setLoading(false); // Set loading to false after email is sent
         }
     };
+
+
 
     return (
         <Segment padded='very' inverted>
@@ -71,7 +79,7 @@ const Cta = () => {
                 <Button inverted
                     type="submit"
                     content='Submit'
-                    disabled={loading} 
+                    disabled={loading}
                     loading={loading}
                 />
             </Form>
