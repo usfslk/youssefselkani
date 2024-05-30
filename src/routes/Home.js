@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../App.css';
 import 'semantic-ui-css/semantic.min.css'
 import {
-    Button, Container, Divider, Grid, Icon, Menu, Segment, Image, Header, List, Message, Form, Input,
+    Button, Container, Divider, Grid, Icon, Accordion, Segment, Image, Header, List, Message, Form, Input,
     TextArea, Statistic
 } from 'semantic-ui-react'
 import '../styles.css';
@@ -32,6 +32,18 @@ const Tech = ({ imageSrc, text }) => {
     );
 };
 
+const Portfolio = ({
+    company,
+    imageUrl,
+}) => {
+    return (
+        <Grid.Column textAlign='center' style={{ marginBottom: 14 }}>
+            <h4>{company}</h4>
+            <Image src={imageUrl} centered style={{ width: 250, height: 200, objectFit: 'cover', borderRadius: 7 }} />
+        </Grid.Column>
+    );
+};
+
 const items = [
     'Web Development',
     'Mobile Development',
@@ -55,6 +67,7 @@ const Expertise = ({ items }) => {
     );
 };
 
+
 const App = () => {
 
 
@@ -67,25 +80,20 @@ const App = () => {
                     <Grid verticalAlign='middle' stackable>
                         <Grid.Column width={8}>
                             <h1>Transformative Business Software & Awesome UX</h1>
-                            <p>With years of experience in crafting advanced IT systems, we're adept at aligning your business goals with your schedule, financial resources, and anticipated outcomes.</p>
-
+                            <p>With over 7 years of experience in crafting advanced IT systems, we excel at aligning your business goals with your schedule, budget, and desired outcomes.</p>
                             <Divider />
-                            <Button inverted href='/portfolio'>
-                                Portfolio
-                            </Button>
-                            <Button inverted href='/contact'>
-                                Get Free Consultation
-                            </Button>
+                            <Button inverted href='/portfolio'>Portfolio</Button>
+                            <Button inverted href='/contact'>Get Free Consultation</Button>
                         </Grid.Column>
                         <Grid.Column width={8}>
-                            <Image centered src={Hero} size='medium' rounded/>
+                            <Image centered src={Hero} size='medium' rounded />
                         </Grid.Column>
                     </Grid>
                 </Container>
             </div>
             <Container>
 
-            <Divider hidden/>
+                <Divider hidden />
 
                 <Grid columns={3} stackable>
                     <Grid.Column>
@@ -126,6 +134,43 @@ const App = () => {
                 <p>Skilled in creating custom applications, implementing cutting-edge technologies, and optimizing infrastructure to meet your business needs</p>
                 <Expertise items={items} />
 
+                <h3 style={{ paddingTop: 44 }}>[Our Work]</h3>
+                <Divider hidden />
+
+                <Grid stackable verticalAlign='middle' columns={3}>
+                    <Portfolio
+                        company="Trajectory US"
+                        imageUrl={require('../assets/gallery/portfolio-1.jpg')}
+                    />
+                    <Portfolio
+                        company="C.F. Print"
+                        imageUrl={require('../assets/gallery/portfolio-2.jpg')}
+                    />
+                    <Portfolio
+                        company="CVS Health"
+                        imageUrl={require('../assets/gallery/portfolio-9.jpg')}
+                    />
+                    <Portfolio
+                        company="Netflix"
+                        imageUrl={require('../assets/gallery/portfolio-4.jpg')}
+                    />
+                    <Portfolio
+                        company="Rthath One"
+                        imageUrl={require('../assets/gallery/portfolio-3.jpg')}
+                    />
+                    <Portfolio
+                        company="Murkstom"
+                        imageUrl={require('../assets/gallery/portfolio-7.jpg')}
+                    />
+                </Grid>
+
+                <Divider hidden />
+                <a href='/portfolio'  >
+                    <p style={{ textDecoration: 'underline', textAlign: 'center', color: 'white' }}>
+                        See more
+                        <Icon name='arrow right' />
+                    </p>
+                </a>
 
 
                 <h3 style={{ paddingTop: 44 }}>[Technology]</h3>
@@ -140,6 +185,7 @@ const App = () => {
                     <Tech imageSrc={Vue} text='Vue' />
                     <Tech imageSrc={Figma} text='Figma' />
                 </Grid>
+
                 <Cta />
 
                 <Divider hidden />
