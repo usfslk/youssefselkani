@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "selkaniyoussef"
-  }
+    "default": "selkaniyoussef",
+    "main": "variablefrequencystudio"
+  },
+  "targets": {},
+  "etags": {}
 }

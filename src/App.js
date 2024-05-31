@@ -11,6 +11,7 @@ import {
 // import NavBar from "./components/NavBar";
 // import SideBarMenuAuth from "./components/SideBarMenuAuth";
 // import Footer from "./components/Footer";
+import { HelmetProvider } from 'react-helmet-async';
 
 // Routes
 import Home from "./routes/Home";
@@ -22,6 +23,7 @@ import Success from "./routes/Success";
 function App() {
   return (
     <Router>
+      
       <div style={{ backgroundColor: '#111' }}>
         <Container>
           <Menu inverted pointing secondary style={{ borderColor: 'transparent', paddingTop: 14, paddingBottom: 7 }}>
