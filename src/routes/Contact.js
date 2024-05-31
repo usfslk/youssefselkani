@@ -7,13 +7,18 @@ import {
 } from 'semantic-ui-react'
 import '../styles.css';
 import Cta from '../comps/Cta'
+import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
 
     return (
 
         <div style={{ display: 'flex', alignItems: 'center', minHeight: '100vh', color: 'white' }}>
-            <Container>
+          
+          <Helmet>
+                <title>Contact | Youssef Selkani - Official Website</title>
+            </Helmet>
+              <Container>
             <Cta />
             </Container>
         </div>

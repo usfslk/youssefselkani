@@ -7,6 +7,7 @@ import {
 } from 'semantic-ui-react'
 import '../styles.css';
 import Cta from '../comps/Cta'
+import { Helmet } from 'react-helmet-async';
 
 import Node from '../assets/tech/node.svg';
 import Block from '../assets/tech/block.png';
@@ -74,7 +75,9 @@ const App = () => {
     return (
 
         <div style={{ color: 'white' }}>
-
+            <Helmet>
+                <title>Youssef Selkani - Official Website | Home</title>
+            </Helmet>
             <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <Container>
                     <Grid verticalAlign='middle' stackable>

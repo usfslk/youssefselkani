@@ -5,10 +5,14 @@ import {
 } from 'semantic-ui-react'
 import Cta from '../comps/Cta'
 import backgroundImage from '../assets/bg.jpeg';
+import { Helmet } from 'react-helmet-async';
 
 function About() {
     return (
         <div>
+            <Helmet>
+                <title>About | Youssef Selkani - Official Website</title>
+            </Helmet>
             <Container>
                 <Divider hidden />
                 <Segment padded='very' inverted fluid style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>

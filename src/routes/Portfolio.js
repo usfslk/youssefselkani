@@ -4,6 +4,7 @@ import {
     TextArea,
 } from 'semantic-ui-react'
 import Cta from '../comps/Cta'
+import { Helmet } from 'react-helmet-async';
 
 const Item = ({
     position,
@@ -41,6 +42,9 @@ const Item = ({
 const Portfolio = () => {
     return (
         <Container>
+                        <Helmet>
+                <title>Portfolio | Youssef Selkani - Official Website</title>
+            </Helmet>
             <div style={{ color: 'white', paddingTop: 48, paddingBottom: 48 }}>
                 <h1>Portfolio</h1>
                 <p>
