@@ -19,14 +19,16 @@ import About from "./routes/About";
 import Contact from "./routes/Contact";
 import Portfolio from "./routes/Portfolio";
 import Success from "./routes/Success";
+import Blog from "./routes/Blog";
+import Article from "./routes/Article";
 
 function App() {
   return (
     <Router>
       <HelmetProvider>
-      <div style={{ backgroundColor: '#111' }}>
+      <div style={{ backgroundColor: '#f0f4f9' }}>
         <Container>
-          <Menu inverted pointing secondary style={{ borderColor: 'transparent', paddingTop: 14, paddingBottom: 7 }}>
+          <Menu  pointing secondary style={{ borderColor: 'transparent', paddingTop: 14, paddingBottom: 7 }}>
             <Menu.Item href='/'>
               Home
             </Menu.Item>
@@ -35,6 +37,9 @@ function App() {
             </Menu.Item>
             <Menu.Item href='/portfolio'>
               Porfolio
+            </Menu.Item>
+            <Menu.Item href='/blog'>
+              Blog
             </Menu.Item>
 
             <Menu.Menu position='right'>
@@ -51,28 +56,30 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/success" element={<Success />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/article/:id" element={<Article />} />
           </Routes>
 
-        <Segment inverted vertical verticalAlign='middle' style={{ padding: '5em 0em' }}>
+        <Segment  vertical verticalAlign='middle' style={{ padding: '5em 0em' }}>
           <Container>
-            <Grid divided inverted stackable>
+            <Grid divided  stackable>
               <Grid.Row>
                 <Grid.Column width={3}>
-                  <Header inverted as='h4' content='About' />
-                  <List link inverted>
+                  <Header  as='h4' content='About' />
+                  <List link >
                     <List.Item as='a'>Sitemap</List.Item>
                     <List.Item as='a'>Contact</List.Item>
                   </List>
                 </Grid.Column>
                 <Grid.Column width={3}>
-                  <Header inverted as='h4' content='Legal' />
-                  <List link inverted>
+                  <Header  as='h4' content='Legal' />
+                  <List link >
                     <List.Item as='a'>Privacy Policy</List.Item>
                     <List.Item as='a'>Terms of Services</List.Item>
                   </List>
                 </Grid.Column>
                 <Grid.Column width={7} textAlign='center'>
-                  <p style={{ color: 'white', marginTop: 28, marginBottom: 7 }}>© 2014-2024 Youssef Selkani - All Rights Reserved.</p>
+                  <p style={{ marginTop: 28, marginBottom: 7 }}>© 2014-2024 Youssef Selkani - All Rights Reserved.</p>
                 </Grid.Column>
               </Grid.Row>
             </Grid>

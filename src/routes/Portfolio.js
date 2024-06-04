@@ -16,7 +16,7 @@ const Item = ({
     imageUrl,
 }) => {
     return (
-        <Segment padded='very' fluid inverted>
+        <Segment padded='very' fluid >
             <Grid verticalAlign='middle' stackable>
                 <Grid.Column width={8}>
                     <h4>{position} at {company}</h4>
@@ -26,12 +26,12 @@ const Item = ({
                         <li key={index}>{task}</li>
                     ))}
                     <Divider hidden />
-                    <Button href={buttonUrl} basic inverted target="_blank">
+                    <Button href={buttonUrl} basic target="_blank">
                         {buttonText}
                     </Button>
                 </Grid.Column>
                 <Grid.Column width={8}>
-                    <Image src={imageUrl} fluid />
+                    <Image rounded src={imageUrl} fluid />
                 </Grid.Column>
             </Grid>
         </Segment>
@@ -42,10 +42,10 @@ const Item = ({
 const Portfolio = () => {
     return (
         <Container>
-                        <Helmet>
+            <Helmet>
                 <title>Portfolio | Youssef Selkani - Official Website</title>
             </Helmet>
-            <div style={{ color: 'white', paddingTop: 48, paddingBottom: 48 }}>
+            <div style={{ paddingTop: 48, paddingBottom: 48 }}>
                 <h1>Portfolio</h1>
                 <p>
                     Explore my recent works showcasing the diverse range of projects I've successfully delivered for clients across various industries.
@@ -125,13 +125,13 @@ const Portfolio = () => {
                 imageUrl={require('../assets/gallery/portfolio-7.jpg')}
             />
 
-            <Segment style={{ textAlign: 'center' }} inverted padded>
+            <Segment style={{ textAlign: 'center' }} padded>
                 <Grid verticalAlign='middle' stackable>
                     <Grid.Column width={10}>
                         <h4>Schedule a Meeting to Discuss Your Goals</h4>
                     </Grid.Column>
                     <Grid.Column width={6}>
-                        <Button inverted target="_blank" href='https://calendly.com/youssefselkani'>
+                        <Button target="_blank" href='https://calendly.com/youssefselkani'>
                             <Icon name='phone' /> Book a Call Now
                         </Button>
                     </Grid.Column>

@@ -1,20 +1,23 @@
 /* Ensure the form and its elements have white text */
 Form {
-	color: white !important;
+	/* color: white !important; */
 }
 
 Input {
-	color: white !important;
+	/* color: white !important; */
 }
 TextArea {
-	color: white !important;
+	/* color: white !important; */
 }
 TextArea:focus {
 	outline: none !important;
-	border-color: rgba(100,100,100,0.25) !important;
+	border-color: rgba(0, 0, 0, 0.25) !important;
+}
+TextArea {
+	border-color: rgba(0, 0, 0, 0.0) !important;
 }
 
 Input::placeholder {
-	color: rgba(255, 255, 255, 0.7) !important;
+	/* color: rgba(255, 255, 255, 0.7) !important; */
 }
   

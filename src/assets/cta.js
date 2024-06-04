@@ -26,7 +26,7 @@ const Cta = ({ status, sendEmail }) => {
         });
     };
   return (
-    <Segment padded='very' inverted>
+    <Segment padded='very' >
       <h1>Let's Discuss Your Project!</h1>
       <p>Share the details of your project – like scope or business challenges. I'll carefully study them and then figure out the next move together.</p>
       {status.success && <Message positive>Your message has been sent successfully!</Message>}

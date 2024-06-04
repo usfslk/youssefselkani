@@ -13,7 +13,7 @@ const Contact = () => {
 
     return (
 
-        <div style={{ display: 'flex', alignItems: 'center', minHeight: '100vh', color: 'white' }}>
+        <div style={{ display: 'flex', alignItems: 'center', minHeight: '100vh' }}>
           
           <Helmet>
                 <title>Contact | Youssef Selkani - Official Website</title>

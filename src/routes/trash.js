@@ -19,7 +19,7 @@
     <Button href='https://www.credly.com/badges/8a794dbb-1bd9-46e0-8ac6-f7b32d170ddb/public_url' basic inverted target="_blank">View</Button>
 </Segment>
 
-<h2 style={{ textAlign: 'center', color: 'white', paddingTop: 22,  paddingBottom: 22 }}>Languages</h2>
+<h2 style={{ textAlign: 'center', paddingTop: 22,  paddingBottom: 22 }}>Languages</h2>
 <Segment padded='very' fluid inverted>
     <Grid stackable columns={2} verticalAlign='middle'>
         <Grid.Column>

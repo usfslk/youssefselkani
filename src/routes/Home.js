@@ -24,7 +24,7 @@ import backgroundImage from '../assets/ocean.jpg';
 const Tech = ({ imageSrc, text }) => {
     return (
         <Grid.Column>
-            <Segment inverted padded='very' textAlign='center'>
+            <Segment  padded='very' textAlign='center'>
                 <Image centered src={imageSrc} size='mini' />
                 <Divider hidden />
                 <p>{text}</p>
@@ -59,7 +59,7 @@ const Expertise = ({ items }) => {
         <Grid columns={3} stackable>
             {items.map((item, index) => (
                 <Grid.Column key={index}>
-                    <Segment inverted padded='very'>
+                    <Segment  padded='very'>
                         <p>{item}</p>
                     </Segment>
                 </Grid.Column>
@@ -74,19 +74,21 @@ const App = () => {
 
     return (
 
-        <div style={{ color: 'white' }}>
+        <div>
             <Helmet>
                 <title>Youssef Selkani - Official Website | Home</title>
             </Helmet>
-            <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', 
+            // backgroundImage: `url(${backgroundImage})`, 
+            backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <Container>
                     <Grid verticalAlign='middle' stackable>
                         <Grid.Column width={8}>
                             <h1>Transformative Business Software & Awesome UX</h1>
                             <p>With over 7 years of experience in crafting advanced IT systems, we excel at aligning your business goals with your schedule, budget, and desired outcomes.</p>
                             <Divider />
-                            <Button inverted href='/portfolio'>Portfolio</Button>
-                            <Button inverted href='/contact'>Get Free Consultation</Button>
+                            <Button  href='/portfolio'>Portfolio</Button>
+                            <Button  href='/contact'>Get Free Consultation</Button>
                         </Grid.Column>
                         <Grid.Column width={8}>
                             <Image centered src={Hero} size='medium' rounded />
@@ -100,23 +102,23 @@ const App = () => {
 
                 <Grid columns={3} stackable>
                     <Grid.Column>
-                        <Segment placeholder inverted padded='very' >
+                        <Segment placeholder  padded='very' >
                             <p>Boost productivity and efficiency with our cutting-edge solutions</p>
                         </Segment>
                     </Grid.Column>
                     <Grid.Column>
-                        <Segment placeholder inverted padded='very' >
+                        <Segment placeholder  padded='very' >
                             <p>Stay ahead of the competition with our innovative technology offerings</p>
                         </Segment>
                     </Grid.Column>
                     <Grid.Column>
-                        <Segment placeholder inverted padded='very' >
+                        <Segment placeholder  padded='very' >
                             <p>Mitigate risks and ensure data security with our robust cybersecurity solutions</p>
                         </Segment>
                     </Grid.Column>
                 </Grid>
 
-                <Statistic.Group inverted widths='2' style={{ paddingTop: 44, paddingBottom: 44 }}>
+                <Statistic.Group  widths='2' style={{ paddingTop: 44, paddingBottom: 44 }}>
                     <Statistic>
                         <Statistic.Value>7+</Statistic.Value>
                         <Statistic.Label>Years of Experience</Statistic.Label>
@@ -128,7 +130,7 @@ const App = () => {
                 </Statistic.Group>
 
                 <a href='/about'  >
-                    <p style={{ textDecoration: 'underline', textAlign: 'center', color: 'white' }}>
+                    <p style={{ textDecoration: 'underline', textAlign: 'center'}}>
                         More about us
                         <Icon name='arrow right' />
                     </p>
@@ -169,7 +171,7 @@ const App = () => {
 
                 <Divider hidden />
                 <a href='/portfolio'  >
-                    <p style={{ textDecoration: 'underline', textAlign: 'center', color: 'white' }}>
+                    <p style={{ textDecoration: 'underline', textAlign: 'center'}}>
                         See more
                         <Icon name='arrow right' />
                     </p>
