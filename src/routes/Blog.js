@@ -32,7 +32,6 @@ const Blog = () => {
                     id: key,
                     ...data[key]
                 }));
-                console.log('Transformed Data:', dataArray);
                 setDataArray(dataArray.reverse());
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -60,7 +59,6 @@ const Blog = () => {
                         <Divider hidden />
                         <Link
                             to={`/article/${item.id}`}
-                            state={{ title: item.title, article: item.article }}
                         >
                             <Button size='tiny'>Read More</Button>
                         </Link>
