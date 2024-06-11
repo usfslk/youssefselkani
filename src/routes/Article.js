@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import '../App.css';
 import 'semantic-ui-css/semantic.min.css'
-import { Container, Divider, Segment, Button, Grid, Loader } from 'semantic-ui-react'
+import { Container, Divider, Segment, Button, Grid, Loader, Image } from 'semantic-ui-react'
 import '../styles.css';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import Cta from '../comps/Cta'
 import { Link } from 'react-router-dom';
-
 
 const Article = () => {
     const [dataArray, setDataArray] = useState([]);
@@ -58,12 +57,20 @@ const Article = () => {
             </Helmet>
             }
             <Container>
-                <Segment padded='very'>
+                {article &&
+                    <div>
+                        <Divider hidden />
+                        <h1 style={{textAlign:'center'}}>{article.title}</h1>
+                        <Divider hidden />
+                        <Image src={article.imageUrl} fluid style={{height: 500, objectFit: 'cover'}} />
+                    </div>
+                }
+                <Segment padded='very' style={{marginTop: '-5vh'}}>
                     {article ? <div dangerouslySetInnerHTML={{ __html: article.article }}></div> :
-                    <Loader active inline='centered' size='small' />}
+                        <Loader active inline='centered' size='small' />}
                 </Segment>
                 <Cta />
-                {/* <Grid stackable verticalAlign='middle' columns={4}>
+                <Grid stackable verticalAlign='middle' columns={4}>
                     {dataArray.map((item) => (
                         <Grid.Column>
                             <Segment padded fluid key={item.id}>
@@ -71,14 +78,13 @@ const Article = () => {
                                 <Divider hidden />
                                 <Link
                                     to={`/article/${item.id}`}
-                                    state={{ title: item.title, article: item.article }}
                                 >
                                     <Button fluid color='black' basic size='tiny'>Read More</Button>
                                 </Link>
                             </Segment>
                         </Grid.Column>
                     ))}
-                </Grid> */}
+                </Grid>
             </Container>
             <Divider hidden />
         </div>

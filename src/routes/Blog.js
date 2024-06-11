@@ -50,18 +50,25 @@ const Blog = () => {
                 <title>Blog | Youssef Selkani - Official Website</title>
             </Helmet>
             <Container>
-                <h1 style={{ textAlign: 'center', marginTop: 48, marginBottom: 48 }}>Blog</h1>
                 {loading && <Loader inline='centered' size='small' active />}
                 {error && <Message error>{error}</Message>}
+                <Divider hidden />
                 {dataArray.map((item) => (
-                    <Segment padded='very' key={item.id}>
-                        <div dangerouslySetInnerHTML={{ __html: item.article.substring(0, 280) + '...' }}></div>
-                        <Divider hidden />
-                        <Link
-                            to={`/article/${item.id}`}
-                        >
-                            <Button size='tiny'>Read More</Button>
-                        </Link>
+                    <Segment padded key={item.id}>
+                        <Grid stackable verticalAlign='middle'>
+                            <Grid.Column width={6}>
+                                <Image src={item.imageUrl} fluid style={{height: 240, objectFit: 'cover'}} />
+                            </Grid.Column>
+                            <Grid.Column width={10}>
+                                <div dangerouslySetInnerHTML={{ __html: item.article.substring(0, 280) + '...' }}></div>
+                                <Divider hidden />
+                                <Link
+                                    to={`/article/${item.id}`}
+                                >
+                                    <Button size='tiny' color='black' basic>Read More</Button>
+                                </Link>
+                            </Grid.Column>
+                        </Grid>
                     </Segment>
                 ))}
             </Container>
