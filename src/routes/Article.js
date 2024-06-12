@@ -60,22 +60,23 @@ const Article = () => {
                 {article &&
                     <div>
                         <Divider hidden />
-                        <h1 style={{textAlign:'center'}}>{article.title}</h1>
+                        <h1 style={{ textAlign: 'center' }}>{article.title}</h1>
                         <Divider hidden />
-                        <Image src={article.imageUrl} fluid style={{height: 500, objectFit: 'cover'}} />
+                        <Image src={article.imageUrl} fluid style={{ height: 500, objectFit: 'cover' }} />
                     </div>
                 }
-                <Segment padded='very' style={{marginTop: '-5vh'}}>
+                <Segment padded='very' style={{ marginTop: '-5vh', borderRadius: 0 }}>
                     {article ? <div dangerouslySetInnerHTML={{ __html: article.article }}></div> :
                         <Loader active inline='centered' size='small' />}
                 </Segment>
                 <Cta />
+
                 <Grid stackable verticalAlign='middle' columns={4}>
                     {dataArray.map((item) => (
                         <Grid.Column>
                             <Segment padded fluid key={item.id}>
+                                <Image src={item.imageUrl} fluid style={{ height: 100, objectFit: 'cover' }} />
                                 <h4>{item.title}</h4>
-                                <Divider hidden />
                                 <Link
                                     to={`/article/${item.id}`}
                                 >
